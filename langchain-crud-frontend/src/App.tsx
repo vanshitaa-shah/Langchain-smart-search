@@ -48,42 +48,44 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
-      <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-        <Header />
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className=" mx-auto p-6 min-h-screen">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <Header />
 
-        <div className="p-6">
-          {error && <ErrorMessage message={error} onClose={clearError} />}
+          <div className="p-6">
+            {error && <ErrorMessage message={error} onClose={clearError} />}
 
-          <SearchBar
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            handleSearch={handleSearch}
-            loading={loading}
-            searchResults={searchResults}
-            clearSearch={clearSearch}
-          />
-
-          <ExampleQueries setSearchQuery={setSearchQuery} />
-
-          <AddProductButton onClick={openCreateForm} />
-
-          <ProductGrid
-            products={products}
-            searchResults={searchResults}
-            onEdit={openEditForm}
-            onDelete={deleteProduct}
-          />
-
-          {isFormOpen && (
-            <ProductForm
-              formData={formData}
-              setFormData={setFormData}
-              editingProduct={editingProduct}
-              onSubmit={handleFormSubmit}
-              onCancel={closeForm}
+            <SearchBar
+              searchQuery={searchQuery}
+              setSearchQuery={setSearchQuery}
+              handleSearch={handleSearch}
+              loading={loading}
+              searchResults={searchResults}
+              clearSearch={clearSearch}
             />
-          )}
+
+            <ExampleQueries setSearchQuery={setSearchQuery} />
+
+            <AddProductButton onClick={openCreateForm} />
+
+            <ProductGrid
+              products={products}
+              searchResults={searchResults}
+              onEdit={openEditForm}
+              onDelete={deleteProduct}
+            />
+
+            {isFormOpen && (
+              <ProductForm
+                formData={formData}
+                setFormData={setFormData}
+                editingProduct={editingProduct}
+                onSubmit={handleFormSubmit}
+                onCancel={closeForm}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>
