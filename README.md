@@ -19,8 +19,7 @@ Traditional e-commerce search forces users to navigate complex filters and dropd
 **Powered by LangChain + Groq's llama-3.1-8b-instant model** for lightning-fast, context-aware search that understands intent, preferences, and shopping context.
 
 ## 🚀 Live Demo
-
-*Coming soon - Deployed version with full functionality*
+[Live Demo Link](https://smart-product-search.netlify.app/)
 
 ## 📋 Overview
 
