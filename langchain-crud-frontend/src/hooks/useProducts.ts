@@ -52,6 +52,10 @@ export const useProducts = () => {
       setError(null);
       await productApi.create(productData);
       await loadProducts();
+      // If we have active search results, refresh them
+      if (searchResults && searchQuery.trim()) {
+        await handleSearch();
+      }
       return true;
     } catch (error) {
       console.error("Failed to create product:", error);
@@ -68,6 +72,10 @@ export const useProducts = () => {
       setError(null);
       await productApi.update(id, productData);
       await loadProducts();
+      // If we have active search results, refresh them
+      if (searchResults && searchQuery.trim()) {
+        await handleSearch();
+      }
       return true;
     } catch (error) {
       console.error("Failed to update product:", error);
@@ -81,6 +89,10 @@ export const useProducts = () => {
       setError(null);
       await productApi.delete(id);
       await loadProducts();
+      // If we have active search results, refresh them
+      if (searchResults && searchQuery.trim()) {
+        await handleSearch();
+      }
       return true;
     } catch (error) {
       console.error("Failed to delete product:", error);
