@@ -37,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
             className="flex-1 sm:flex-none px-4 sm:px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 flex items-center justify-center gap-2 text-sm sm:text-base"
           >
             <Search size={18} className="sm:w-5 sm:h-5" />
-            {loading ? "Searching..." : "Search"}
+            Search
           </button>
           {searchResults && (
             <button

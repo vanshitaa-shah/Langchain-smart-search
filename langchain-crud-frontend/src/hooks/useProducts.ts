@@ -8,7 +8,7 @@ export const useProducts = () => {
   const [searchResults, setSearchResults] = useState<SearchResponse | null>(
     null
   );
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -17,12 +17,15 @@ export const useProducts = () => {
 
   // Load all products from the API
   const loadProducts = async () => {
+    setLoading(true);
     try {
       const data = await productApi.getAll();
       setProducts(data);
     } catch (error) {
       console.error("Failed to load products:", error);
       setError("Failed to load products");
+    } finally {
+      setLoading(false);
     }
   };
 
